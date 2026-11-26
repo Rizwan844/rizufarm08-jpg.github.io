@@ -13,6 +13,17 @@
 @media(max-width:760px){.wrap{width:calc(100% - 32px)}.hero{padding:40px 0 32px}.hero-grid{grid-template-columns:1fr;gap:26px}.hero-art{min-height:260px;grid-row:1}.app-icon{width:176px}.features,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.legal-grid{grid-template-columns:1fr}.support{align-items:flex-start;flex-direction:column}.section{padding:38px 0}.topbar{min-height:unset}.nav{gap:10px 15px}}
 @media(max-width:440px){.features,.steps{grid-template-columns:1fr}.actions .button{width:100%}.hero-art{min-height:225px;padding:24px}.app-icon{width:150px}.tile{padding:18px}.support .button{width:100%;white-space:normal}.brand{font-size:1.1rem}.nav a{font-size:.83rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Responsive screenshot gallery; preserve the original image proportions. */
+.screenshot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px;align-items:start}
+.screenshot-card{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.screenshot-card a{display:block;text-decoration:none}
+.screenshot-card a:focus-visible{outline-offset:-4px}
+.screenshot-card img{display:block;width:100%;height:auto}
+.screenshot-card figcaption{padding:13px 10px;text-align:center;font-size:.9rem;font-weight:650;color:var(--text);border-top:1px solid var(--line)}
+.screenshot-card:hover{border-color:var(--accent)}
+@media(max-width:760px){.screenshot-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.screenshot-card figcaption{font-size:.8rem;padding:10px 6px}}
+@media(max-width:340px){.screenshot-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -20,7 +31,7 @@
 <header class="site-header">
   <div class="wrap topbar">
     <a class="brand" href="../">RIZU APPS</a>
-    <nav class="nav" aria-label="Main navigation"><a href="../">Studio home</a><a href="#features">Features</a><a href="#how-to-play">How to play</a><a href="#support">Support</a></nav>
+    <nav class="nav" aria-label="Main navigation"><a href="../">Studio home</a><a href="#features">Features</a><a href="#how-to-play">How to play</a><a href="#screenshots">Screenshots</a><a href="#support">Support</a></nav>
   </div>
 </header>
 <main id="main">
@@ -70,6 +81,19 @@
       <li class="tile"><h3>Clear the board</h3><p>Keep choosing the right order until the puzzle is solved.</p></li>
     </ol>
   </section>
+  <section class="section wrap" id="screenshots" aria-labelledby="screenshots-title">
+    <p class="eyebrow">GAME GALLERY</p>
+    <h2 id="screenshots-title">See the game in action.</h2>
+    <p class="section-intro">Explore the game's promotional screenshots. Select any image to view it at full size. Screenshots may show features that vary by version.</p>
+    <div class="screenshot-grid">
+      <figure class="screenshot-card"><a href="./01-Think-Before-You-Tap.png" target="_blank" rel="noopener" aria-label="View Think before you tap screenshot full size (opens in a new tab)"><img src="./01-Think-Before-You-Tap.png" alt="Clear the Arrows: Think before you tap" loading="lazy" decoding="async"></a><figcaption>Think before you tap</figcaption></figure>
+      <figure class="screenshot-card"><a href="./03-Ready-For-A-Challenge.png" target="_blank" rel="noopener" aria-label="View Ready for a challenge screenshot full size (opens in a new tab)"><img src="./03-Ready-For-A-Challenge.png" alt="Clear the Arrows: Ready for a challenge" loading="lazy" decoding="async"></a><figcaption>Ready for a challenge</figcaption></figure>
+      <figure class="screenshot-card"><a href="./04-Discover-Unique-Shapes.png" target="_blank" rel="noopener" aria-label="View Discover unique shapes screenshot full size (opens in a new tab)"><img src="./04-Discover-Unique-Shapes.png" alt="Clear the Arrows: Discover unique shapes" loading="lazy" decoding="async"></a><figcaption>Discover unique shapes</figcaption></figure>
+      <figure class="screenshot-card"><a href="./05-New-Puzzles-Every-Day.png" target="_blank" rel="noopener" aria-label="View New puzzles every day screenshot full size (opens in a new tab)"><img src="./05-New-Puzzles-Every-Day.png" alt="Clear the Arrows: New puzzles every day" loading="lazy" decoding="async"></a><figcaption>New puzzles every day</figcaption></figure>
+      <figure class="screenshot-card"><a href="./07-Explore-100-Levels.png" target="_blank" rel="noopener" aria-label="View Explore 100 levels screenshot full size (opens in a new tab)"><img src="./07-Explore-100-Levels.png" alt="Clear the Arrows: Explore 100 levels" loading="lazy" decoding="async"></a><figcaption>Explore 100 levels</figcaption></figure>
+      <figure class="screenshot-card"><a href="./08-Clear-Every-Arrow.png" target="_blank" rel="noopener" aria-label="View Clear every arrow screenshot full size (opens in a new tab)"><img src="./08-Clear-Every-Arrow.png" alt="Clear the Arrows: Clear every arrow" loading="lazy" decoding="async"></a><figcaption>Clear every arrow</figcaption></figure>
+    </div>
+  </section>
   <section class="section wrap" id="support">
     <p class="eyebrow">PLAYER SUPPORT</p>
     <h2>Here to help.</h2>
@@ -85,4 +109,3 @@
 <footer class="footer"><div class="wrap footer-inner"><div><a class="brand" href="../">RIZU APPS</a><p>© 2026 Rizu Apps. All rights reserved.</p></div><nav aria-label="Footer navigation"><a href="../">Studio home</a><a href="./privacy.html">Privacy</a><a href="./terms-of-service.html">Terms</a><a href="./account-deletion.html">Account deletion</a></nav></div></footer>
 </body>
 </html>
-
