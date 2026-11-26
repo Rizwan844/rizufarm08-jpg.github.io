@@ -2,74 +2,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <title>Rizu Apps</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #101624;
-            color: #ffffff;
-            text-align: center;
-        }
-        header {
-            padding: 40px 20px;
-            background: #192338;
-        }
-        h1 {
-            color: #65c7ff;
-        }
-        main {
-            max-width: 800px;
-            margin: auto;
-            padding: 24px;
-        }
-        .game {
-            background: #1c293d;
-            border-radius: 16px;
-            padding: 25px;
-            margin: 20px 0;
-        }
-        a {
-            color: #65c7ff;
-            display: inline-block;
-            padding: 10px;
-        }
-        footer {
-            color: #a0aec0;
-            padding: 30px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rizu Apps - Independent mobile games and applications.">
+<meta name="theme-color" content="#101624">
+<title>Rizu Apps | Official Website</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #101624;
+    color: #f4f7ff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+header {
+    background: #151e30;
+    border-bottom: 1px solid #303e55;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 18px 0;
+    gap: 16px;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #74d1ff;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #dce7f7;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero {
+    padding: 80px 20px;
+    text-align: center;
+    background: radial-gradient(
+        ellipse at top,
+        #223b58,
+        #101624 75%
+    );
+}
+
+.eyebrow {
+    color: #74d1ff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+p {
+    color: #b9c7dc;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+section {
+    padding: 30px 0;
+}
+
+.game-card {
+    background: #192538;
+    border: 1px solid #35455f;
+    border-radius: 22px;
+    padding: 30px;
+}
+
+.game-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.game-icon {
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+    border-radius: 22px;
+}
+
+.game-header h2 {
+    margin: 0;
+}
+
+.category {
+    color: #74d1ff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 10px;
+    background: #74d1ff;
+    color: #101624;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button:hover {
+    background: #a5e3ff;
+}
+
+.secondary {
+    background: transparent;
+    border: 1px solid #526784;
+    color: #e3edff;
+}
+
+.secondary:hover {
+    background: #283950;
+}
+
+.legal-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid #35455f;
+}
+
+.legal-links a {
+    color: #b1dfff;
+    padding: 12px;
+    border: 1px solid #40516b;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.coming-soon {
+    margin-top: 24px;
+    border: 1px dashed #43546c;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+}
+
+.support {
+    border-top: 1px solid #35455f;
+    margin-top: 20px;
+}
+
+.support a {
+    color: #74d1ff;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #35455f;
+    color: #a5b3c8;
+    font-size: 13px;
+}
+
+footer a {
+    color: #a5dfff;
+}
+
+a:focus-visible {
+    outline: 3px solid #74d1ff;
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero {
+        padding: 48px 16px;
+    }
+
+    .game-card {
+        padding: 20px;
+    }
+
+    .game-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .legal-links {
+        grid-template-columns: 1fr;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    nav a {
+        margin-left: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>RIZU APPS</h1>
-    <p>Independent Mobile Games &amp; Applications</p>
+    <div class="container">
+        <nav aria-label="Main navigation">
+            <div class="brand">RIZU APPS</div>
+            <div>
+                <a href="#home">Home</a>
+                <a href="#games">Games</a>
+                <a href="#support">Support</a>
+            </div>
+        </nav>
+    </div>
 </header>
 
 <main>
+
+<div class="hero" id="home">
+    <div class="eyebrow">
+        INDEPENDENT GAME DEVELOPMENT
+    </div>
+
+    <h1>Small Games.<br>Big Challenges.</h1>
+
+    <p>
+        Discover mobile games designed to entertain,
+        challenge and inspire.
+    </p>
+
+    <a class="button" href="#games">
+        Explore Our Games
+    </a>
+</div>
+
+<div class="container">
+
+<section id="games">
+
     <h2>Our Games</h2>
 
-    <section class="game">
-        <h2>Clear the Arrows</h2>
-        <p>Tap Puzzle</p>
-        <p>
-            Solve arrow puzzles, challenge your mind
-            and unlock new levels.
-        </p>
-    </section>
+    <article class="game-card">
 
-    <section class="game">
+        <div class="game-header">
+
+            <img
+                class="game-icon"
+                src="clear-the-arrows/icon.png"
+                alt="Clear the Arrows game icon"
+                width="125"
+                height="125"
+            >
+
+            <div>
+                <div class="category">
+                    ANDROID &bull; PUZZLE
+                </div>
+
+                <h2>Clear the Arrows</h2>
+
+                <p>Tap Puzzle</p>
+
+                <p>
+                    Solve arrow puzzles, challenge your
+                    mind, complete levels and enjoy
+                    a satisfying puzzle experience.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <a class="button"
+               href="https://play.google.com/store/apps/details?id=com.tangleclear.app">
+                View on Google Play
+            </a>
+
+            <a class="button secondary"
+               href="clear-the-arrows/index.html">
+                About the Game
+            </a>
+
+        </div>
+
+        <div class="legal-links">
+
+            <a href="clear-the-arrows/privacy.html">
+                Privacy Policy
+            </a>
+
+            <a href="clear-the-arrows/terms-of-service.html">
+                Terms of Service
+            </a>
+
+            <a href="clear-the-arrows/account-deletion.html">
+                Account Deletion
+            </a>
+
+        </div>
+
+    </article>
+
+    <div class="coming-soon">
+
         <h2>More Games Coming Soon</h2>
-        <p>New games and applications are in development.</p>
-    </section>
+
+        <p>
+            New games and applications are
+            currently in development.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="support" class="support">
+
+    <h2>Player Support</h2>
+
+    <p>
+        For game support, please refer to the
+        developer contact information available
+        on our Google Play listing.
+    </p>
+
+    <p>
+        For information about personal data,
+        privacy or account deletion, use the
+        dedicated links provided for your game.
+    </p>
+
+    <p>
+        <a href="clear-the-arrows/privacy.html">
+            Privacy Information
+        </a>
+        &nbsp; | &nbsp;
+        <a href="clear-the-arrows/account-deletion.html">
+            Account Deletion Request
+        </a>
+    </p>
+
+</section>
+
+</div>
+
 </main>
 
 <footer>
-    &copy; 2026 Rizu Apps
+
+    <strong>RIZU APPS</strong>
+
+    <p>Independent Mobile Games &amp; Applications</p>
+
+    <p>&copy; 2026 Rizu Apps. All rights reserved.</p>
+
+    <a href="app-ads.txt">Advertising Authorization</a>
+
 </footer>
 
 </body>
